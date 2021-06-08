@@ -1,9 +1,0 @@
-
----
-- name: Installing DataBase
- hosts: dev
- become: yes
-
- tasks:
- - name: Copy Confluence to instance
-   
