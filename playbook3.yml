@@ -6,7 +6,11 @@
 
   tasks:
   - name: instaling nginx
-    apt: name=nginx state=latest
+    shell: sudo systemctl stop apache2
+    shell: sudo apt update
+    shell: sudo apt install -y nginx
+    shell: sudo systemctl start nginx
+    shell: sudo systemctl enable nginx
 
   - name: instaling postgresql
     shell: sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
